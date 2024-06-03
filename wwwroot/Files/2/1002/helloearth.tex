@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\begin{enumerate}
+    \item Animal
+    \item Vegetable
+    \item Mineral
+\end{enumerate}
+------------
+\begin{itemize}
+    \item Animal
+    \item Vegetable
+    \item Mineral
+\end{itemize}
+------------
+\renewcommand{\labelitemi}{*}
+\renewcommand{\labelitemii}{\dag}
+\begin{itemize}
+    \item Animal
+    \item Vegetable
+    \item Mineral
+\end{itemize}
+------------
+\begin{itemize}
+    \item Animal
+    \begin{itemize}
+        \item Vegetable
+        \item Mineral
+    \end{itemize}
+\end{itemize}
+\end{document}

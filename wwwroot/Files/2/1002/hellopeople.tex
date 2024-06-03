@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{vietnam}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\begin{document}
+
+\part{ Bai 19}
+
+\begin{figure}[tbh]
+\centerline{\includegraphics[height=3cm]{shapes.pdf}}
+\caption{Some shapes}
+\label{fig:shapes}
+
+\end{figure}
+
+\begin{figure}[tbh]
+\centering \subfigure[A Circle]{\label{fig:circle}
+\includegraphics[height=1in]{circle.pdf}}
+\hspace{0.8in}
+\subfigure[A Rectangle]{\label{fig:rectangle}
+\includegraphics[height=1in]{rectangle.pdf}}
+\caption{(a) A Circle, (b) A Rectangle} 
+\label{fig:subfigex}
+
+\end{figure}
+
+\begin{table}[tbh]
+
+\caption{An example table}
+\vspace{10pt}
+\centerline{
+\begin{tabular}{l|ll}
+\label{tab.exam}
+     & A & B \\\hline
+    I & 0.5 & 1.0\\
+    II & 12 & 14
+\end{tabular}
+}
+\end{table}
+
+Figure \ref{fig:circle} shows a circle,
+Figure \ref{fig:rectangle} shows a rectangle,
+Table \ref{tab.exam} shows a table cuong
+\listoffigures
+\listoftables
+
+\end{document}
+
+
+

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Hustex-backend.props" />
+</Project>
