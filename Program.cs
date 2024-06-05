@@ -2,7 +2,9 @@
 using Hustex_backend.Helpers;
 using Hustex_backend.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +29,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseCors(); 
+app.UseCors(policy => 
+    policy.AllowAnyOrigin()
+          .AllowAnyMethod()
+          .AllowAnyHeader()
+); 
+
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -122,12 +129,62 @@ app.UseEndpoints((endpoints) => {
         };
 
         db.Files.Add(newFile);
-
         db.SaveChanges();
 
         string fileLocation = @"D:\git-repos\project2\Hustex-backend\wwwroot\Files\" + userid + @"\" + projectid + @"\" + filename + "." + fileType;
-        System.IO.File.Create(fileLocation);
+        await System.IO.File.Create(fileLocation).DisposeAsync();
     });
+
+    endpoints.MapDelete("api/delete-file/{userid:int}/{projectid:int}", async (HttpContext context, LatexDb db) => {
+        var userid = int.Parse(string.Format("{0}", context.Request.RouteValues["userid"]));
+        var projectid = int.Parse(string.Format("{0}", context.Request.RouteValues["projectid"]));
+        var filename = string.Format("{0}", context.Request.Query["filename"]);
+        var fileType = string.Format("{0}", context.Request.Query["filetype"]);
+
+        var project = await (from p in db.Projects
+                        where p.ProjectId == projectid
+                        select p).FirstOrDefaultAsync();
+        
+        var file = new Hustex_backend.Models.File{
+            FileName = filename,
+            Project = project,
+            DataType = fileType
+        };
+
+        db.Files.Remove(file);
+        db.SaveChanges();
+
+        string fileLocation = @"D:\git-repos\project2\Hustex-backend\wwwroot\Files\" + userid + @"\" + projectid + @"\" + filename + "." + fileType;
+        System.IO.File.Delete(fileLocation);
+    });
+
+    endpoints.MapPost("api/import/{userid:int}/{projectid:int}", async (HttpContext context, LatexDb db) => {
+        var userid = int.Parse(string.Format("{0}", context.Request.RouteValues["userid"]));
+        var projectid = int.Parse(string.Format("{0}", context.Request.RouteValues["projectid"]));
+
+        IFormFile file = context.Request.Form.Files[0];
+        var filePath = @"D:\git-repos\project2\Hustex-backend\wwwroot\Files\" + userid + @"\" + projectid + @"\" + file.FileName;
+
+        using (var fileStream = new FileStream(filePath, FileMode.Create))
+        {
+            await file.CopyToAsync(fileStream);
+        }
+        var project = await (from p in db.Projects
+                    where p.ProjectId == projectid
+                    select p).FirstOrDefaultAsync();
+        var filename = file.FileName.Split('.')[0];
+        var fileType = file.FileName.Split('.')[1];
+        var newFile = new Hustex_backend.Models.File{
+            FileName = filename,
+            Project = project,
+            DataType = fileType
+        };
+
+        Console.WriteLine(newFile.DataType);
+        db.Files.Add(newFile);
+        db.SaveChanges();
+    });
+
 
 //     endpoints.MapPost("api/create-new-project", async (HttpContext context, LatexDb db) => {
 //         using var reader = new StreamReader(context.Request.Body);

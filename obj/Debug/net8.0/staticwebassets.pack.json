@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Data\\LatexFile\\main.tex"
     },
     {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\circle.pdf",
+      "PackagePath": "staticwebassets\\Data\\PdfFile\\circle.pdf"
+    },
+    {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloearth.aux",
       "PackagePath": "staticwebassets\\Data\\PdfFile\\helloearth.aux"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloworld.pdf",
       "PackagePath": "staticwebassets\\Data\\PdfFile\\helloworld.pdf"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\a.bib",
+      "PackagePath": "staticwebassets\\Files\\2\\1002\\a.bib"
     },
     {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\circle.pdf",

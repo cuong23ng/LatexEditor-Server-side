@@ -1,5 +1,4 @@
 using System.Text;
-using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Hustex_backend.Helpers
@@ -15,7 +14,7 @@ namespace Hustex_backend.Helpers
 
                 var content = JsonConvert.DeserializeObject<string>(body);
                 
-                await System.IO.File.WriteAllTextAsync(location, content);
+                await File.WriteAllTextAsync(location, content);
 
                 return true;
             }

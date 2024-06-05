@@ -1,6 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 
 namespace Hustex_backend.Models
 {
@@ -23,8 +21,7 @@ namespace Hustex_backend.Models
                 .IsUnique();
 
             modelBuilder.Entity<File>()
-                .HasIndex(n => n.FileName)
-                .IsUnique();
+                .HasKey(f => new { f.FileName, f.ProjectId, f.DataType });
 
             modelBuilder.Entity<Project>()
                 .Property(d => d.LastModified)

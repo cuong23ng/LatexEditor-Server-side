@@ -4,6 +4,7 @@ using Hustex_backend.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hustex_backend.Migrations
 {
     [DbContext(typeof(LatexDb))]
-    partial class LatexDbModelSnapshot : ModelSnapshot
+    [Migration("20240603152826_InitWebDB_V10")]
+    partial class InitWebDB_V10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +35,10 @@ namespace Hustex_backend.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("DataType")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FileName", "ProjectId", "DataType");
+                    b.HasKey("FileName", "ProjectId");
 
                     b.HasIndex("ProjectId");
 
@@ -52,7 +56,7 @@ namespace Hustex_backend.Migrations
                     b.Property<DateTime>("LastModified")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2024, 6, 4, 16, 58, 32, 308, DateTimeKind.Local).AddTicks(9246));
+                        .HasDefaultValue(new DateTime(2024, 6, 3, 22, 28, 22, 715, DateTimeKind.Local).AddTicks(2363));
 
                     b.Property<string>("ProjectName")
                         .IsRequired()

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6nY3pBEWiuSPO4iqArWjIktCln0MtHyULfSh9kImqhM=",
+  "Hash": "rleGLjyjSDX2UfNMKPn8zCdE5Rwv220kak/FYzsVzmo=",
   "Source": "Hustex-backend",
   "BasePath": "_content/Hustex-backend",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Data\\LatexFile\\main.tex"
+    },
+    {
+      "Identity": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\circle.pdf",
+      "SourceId": "Hustex-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\",
+      "BasePath": "_content/Hustex-backend",
+      "RelativePath": "Data/PdfFile/circle.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Data\\PdfFile\\circle.pdf"
     },
     {
       "Identity": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloearth.aux",
@@ -167,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Data\\PdfFile\\helloworld.pdf"
+    },
+    {
+      "Identity": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\a.bib",
+      "SourceId": "Hustex-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\",
+      "BasePath": "_content/Hustex-backend",
+      "RelativePath": "Files/2/1002/a.bib",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\2\\1002\\a.bib"
     },
     {
       "Identity": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\circle.pdf",
