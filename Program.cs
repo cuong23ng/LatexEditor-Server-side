@@ -1,10 +1,7 @@
 // docker-compose up -d
 using Hustex_backend.Helpers;
 using Hustex_backend.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,11 +37,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseEndpoints((endpoints) => {
-
-    endpoints.MapGet("api/helloworld", async (context) => {
-        context.Response.WriteAsync("Hello world");
-    });
-
+    
     endpoints.MapPost("api/login", async (HttpContext context, LatexDb db) => {
         var user = RequestProcess.ProcessForm(context.Request);
 
@@ -75,7 +68,7 @@ app.UseEndpoints((endpoints) => {
         await context.Response.WriteAsync(Json);
     });
 
-    endpoints.MapGet("api/project/{userid:int}/{projectid:int}", async (HttpContext context, LatexDb db) => {
+    endpoints.MapGet("api/files/{userid:int}/{projectid:int}", async (HttpContext context, LatexDb db) => {
         var projectid = Int32.Parse(context.Request.RouteValues["projectid"].ToString());
 
         List<Hustex_backend.Models.File> files = await (from file in db.Files
@@ -92,10 +85,15 @@ app.UseEndpoints((endpoints) => {
         var projectid = int.Parse(string.Format("{0}", context.Request.RouteValues["projectid"]));
         var filename = string.Format("{0}", context.Request.RouteValues["filename"]);
 
-        string location = @"D:\git-repos\project2\Hustex-backend\wwwroot\Files\" + userid + @"\" + projectid + @"\";
+        string location = $"wwwroot\\Files\\{userid}\\{projectid}";
 
         // Console.WriteLine(location);
-        Compiler.PDFConverter(location, filename);
+        if (Compiler.PDFConverter(location, filename)) {
+            return Results.Ok();
+        }
+        else {
+            return Results.Problem();
+        }
     });
 
     endpoints.MapPut("api/save/{userid:int}/{projectid:int}/{filename}", async (HttpContext context, LatexDb db) => {
@@ -103,8 +101,8 @@ app.UseEndpoints((endpoints) => {
         var projectid = int.Parse(string.Format("{0}", context.Request.RouteValues["projectid"]));
         var filename = string.Format("{0}", context.Request.RouteValues["filename"]);
         
-        string location = @"D:\git-repos\project2\Hustex-backend\wwwroot\Files\" + userid + @"\" + projectid + @"\" + filename + ".tex";
-        if(await LatexWriter.SaveToFile(context, location)) {
+        string path = $"wwwroot\\Files\\{userid}\\{projectid}\\{filename}.tex";
+        if(await LatexWriter.SaveToFile(context, path)) {
             return Results.Ok();
         }
         else {
@@ -131,8 +129,8 @@ app.UseEndpoints((endpoints) => {
         db.Files.Add(newFile);
         db.SaveChanges();
 
-        string fileLocation = @"D:\git-repos\project2\Hustex-backend\wwwroot\Files\" + userid + @"\" + projectid + @"\" + filename + "." + fileType;
-        await System.IO.File.Create(fileLocation).DisposeAsync();
+        string path = $"wwwroot\\Files\\{userid}\\{projectid}\\{filename}.{fileType}";
+        await System.IO.File.Create(path).DisposeAsync();
     });
 
     endpoints.MapDelete("api/delete-file/{userid:int}/{projectid:int}", async (HttpContext context, LatexDb db) => {
@@ -154,8 +152,8 @@ app.UseEndpoints((endpoints) => {
         db.Files.Remove(file);
         db.SaveChanges();
 
-        string fileLocation = @"D:\git-repos\project2\Hustex-backend\wwwroot\Files\" + userid + @"\" + projectid + @"\" + filename + "." + fileType;
-        System.IO.File.Delete(fileLocation);
+        string path = $"wwwroot\\Files\\{userid}\\{projectid}\\{filename}.{fileType}";
+        System.IO.File.Delete(path);
     });
 
     endpoints.MapPost("api/import/{userid:int}/{projectid:int}", async (HttpContext context, LatexDb db) => {
@@ -163,9 +161,9 @@ app.UseEndpoints((endpoints) => {
         var projectid = int.Parse(string.Format("{0}", context.Request.RouteValues["projectid"]));
 
         IFormFile file = context.Request.Form.Files[0];
-        var filePath = @"D:\git-repos\project2\Hustex-backend\wwwroot\Files\" + userid + @"\" + projectid + @"\" + file.FileName;
+        var path = $"wwwroot\\Files\\{userid}\\{projectid}\\{file.FileName}";
 
-        using (var fileStream = new FileStream(filePath, FileMode.Create))
+        using (var fileStream = new FileStream(path, FileMode.Create))
         {
             await file.CopyToAsync(fileStream);
         }
@@ -186,59 +184,78 @@ app.UseEndpoints((endpoints) => {
     });
 
 
-//     endpoints.MapPost("api/create-new-project", async (HttpContext context, LatexDb db) => {
-//         using var reader = new StreamReader(context.Request.Body);
+    endpoints.MapPost("api/create-new-project/{userid:int}/{username}", async (HttpContext context, LatexDb db) => {
+        var userid = int.Parse(string.Format("{0}", context.Request.RouteValues["userid"]));
+        var username = string.Format("{0}", context.Request.RouteValues["username"]);
+        using var reader = new StreamReader(context.Request.Body);
 
-//         var body = await reader.ReadToEndAsync();
+        var body = await reader.ReadToEndAsync();
 
-//         var newProject = JsonConvert.DeserializeObject<Project>(body);
+        var newProject = JsonConvert.DeserializeObject<Project>(body);
 
-//         db.Add(newProject);
+        Hustex_backend.Models.File newFile = new Hustex_backend.Models.File() { 
+            FileName = "main", 
+            Project = newProject,
+            DataType = "tex"
+        };
 
-//         TexFile newTexFile = new TexFile() { 
-//             FileName = "main", 
-//             Content = "\\documentclass{article}\n\\usepackage{graphicx} % Required for inserting images\n\n\\title{tes}\n\\author{Hùng Cường Nguyễn}\n\\date{May 2024}\n\n\\begin{document}\n\n\\maketitle\n\n\\section{Introduction}\n\n\\end{document}",
-//             project = newProject
-//         };
+        db.Files.Add(newFile);
 
-//         db.Add(newTexFile);
+        db.Projects.Add(newProject);
 
-//         db.SaveChanges();
+        db.SaveChanges();
 
-//         Console.WriteLine($"Id: {newProject.ProjectId} - Name: {newProject.ProjectName}");
-//     });
+        Console.WriteLine($"Id: {newProject.ProjectId} - Name: {newProject.ProjectName}");
 
-//     endpoints.MapPut("api/compile/{fileid:int}", async (HttpContext context, LatexDb db) => {
-//         using var reader = new StreamReader(context.Request.Body);
+        var location = $"wwwroot\\Files\\{userid}\\{newProject.ProjectId}";
+        Directory.CreateDirectory(location);
 
-//         var body = await reader.ReadToEndAsync();
-
-//         var newFile = JsonConvert.DeserializeObject<TexFile>(body);
+        var content = @"\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage{graphicx} % Required for inserting images
         
-//         var file = await (from f in db.TexFiles
-//                     where f.ProjectId == 1 && f.FileId == newFile.FileId 
-//                     select f).FirstOrDefaultAsync();
-
-//         if (file is null) return Results.NotFound();
+\title{" + newProject.ProjectName + "}" + @"
+\author{" + username + "}" + @"
+\date{" + DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Year + "}" + @"
         
-//         file.Content = newFile.Content;
+\begin{document}
+        
+\maketitle
+        
+\section{Introduction}
+        
+\end{document}";
+        await System.IO.File.WriteAllTextAsync(Path.Combine(location, "main.tex"), content);
+    });
 
-//         await db.SaveChangesAsync();
+    endpoints.MapDelete("api/delete-project/{userid:int}/{projectid:int}", async (HttpContext context, LatexDb db) => {
+        var userid = int.Parse(string.Format("{0}", context.Request.RouteValues["userid"]));
+        var projectid = int.Parse(string.Format("{0}", context.Request.RouteValues["projectid"]));
 
-//         return Results.NoContent();
-//     });
+        string path = $"wwwroot\\Files\\{userid}\\{projectid}";
+        Directory.Delete(path, true);
 
+        var project = await (from p in db.Projects
+                        where p.ProjectId == projectid
+                        select p).FirstOrDefaultAsync();
 
-//     endpoints.MapPost("api/user", async (HttpContext context, LatexDb db) => {
-//         var newUser = RequestProcess.ProcessForm(context.Request);
+        db.Projects.Remove(project);
+        await db.SaveChangesAsync();
+    });
 
-//         if (newUser != null) {
-//             db.Users.Add(newUser);
-//             await db.SaveChangesAsync();
-//         }
+    endpoints.MapPost("api/user", async (HttpContext context, LatexDb db) => {
+        var newUser = RequestProcess.ProcessForm(context.Request);
 
-//         return Results.Ok();
-//     });
+        if (newUser != null) {
+            db.Users.Add(newUser);
+            await db.SaveChangesAsync();
+        }
+
+        var path = $"wwwroot\\Files\\{newUser.UserId}";
+        Directory.CreateDirectory(path);
+
+        return Results.Ok();
+    });
 
 });
 

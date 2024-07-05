@@ -1,0 +1,191 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage[short]{datetime}
+
+\title{\luge{Đề thi Kiến Thức Máy tính lớp Công nghệ thông tin Việt Pháp kỳ 20211-IT2120}}
+\author{\large Nguyễn Hùng Cường - 20215264}
+\date{\large \today}
+
+\begin{document}
+
+\maketitle
+\pagenumbering{roman}
+\section{Cách tính điểm của bài thi}
+\begin{itemize}
+    \item Dịch được file (0,5 điểm)
+    \item 03 dòng tiêu đề mỗi dòng 0,25 điểm
+    \item Định dạng đúng (0,5 điểm)
+    \item Sectioning (0,75 điểm)
+    \item Math (2 điểm): biểu diễn được hàm số (1 điểm). Biểu diễn được công thức tính (1 điểm)
+    \item Table ( 1,5 điểm): bảng đầu 0,5 điểm, bảng sau 1 điểm
+    \item Figure (1,5 điểm): figure đầu 0,5 điểm, figure sau 1 điểm
+    \item Tạo itemize và enumerate (0,5 điểm)
+    \item Phụ lục (0,5 điểm)
+    \item Cross Ref (0,5 điểm)
+    \item Tạo mục lục và các danh sách (1 điểm): mục lục (0,5 điểm), danh sách hình (0,25 điểm), danh sách bảng (0,25 điểm)
+\end{itemize}
+\section{Hướng dẫn làm bài}
+\subsection{Làm bài như thế nào}
+Sinh viên cần tạo ra văn bản giống hoàn toàn văn bản này bằng cách sử dụng \LaTeX. Sinh viên có thể gõ tiếng Việt không dấu.
+\begin{enumerate}
+    \item Phải sử dụng loại tài liệu ``article'' cho phần document class với khổ giấy a4 và phông chữ 12pt.
+    \item Ghi họ tên đầy đủ và ngày tháng bằng cách sử dụng câu lệnh \textbackslash author và \textbackslash date
+    \item Sử dụng các câu lệnh sectionning để phân chia session cho tài liệu.
+    \item Sử dụng các câu lệnh tham chiếu chéo khi có tham chiếu.
+    \item Sử dụng các câu lệnh tạo.
+    \begin{itemize}
+        \item Mục lục
+        \item Tạo danh sách hình
+        \item Danh sách bảng
+        \item \ldots
+    \end{itemize}
+    \item Chú ý để file hình ảnh và file mã nguồn \LaTeX(.tex) trong cùng thư mục khi làm bài.
+\end{enumerate}
+\subsection{Nộp bài}
+Thời gian làm bài là 90 phút.\textbf{Khi nộp bài sinh viên cần soạn email gửi đến địa chỉ email do Giáo viên cung cấp trong phòng thi và nộp lên assignments sẽ được tạo trong Teams của lớp học}.Tiêu đề email:KTMT- Họ tên sinh viên - Mã số sinh viên.Cần đính kèm email các file sau khi nộp bài:
+\begin{enumerate}
+    \item Mã nguồn LATEX : file đuôi .tex
+    \item Tất cả các file hình ảnh sử dụng trong tài liệu
+    \item File pdf sinh ra cuối cùng của tài liệu.
+\end{enumerate}
+\textbf{Nộp bài trên assignments}:Sinh viên nộp một \textit{\textbf{file .zip}} (bao gồm mã nguồn, tất cả các file hình ảnh sử dụng trong bài thi) và một \textbf{\textit{file .pdf}} sinh ra cuối cùng của tài liệu với tên là tên sinh viên viết liền không dấu và viết hoa chữ cái đầu tiên ví dụ như Nguyễn Văn Abc với số hiệu sinh viên là 20211234 thì các file cần nộp là:\\
+NguyenVanAbc\textunderscore20211234.zip và NguyenVanAbc\textunderscore20211234.pdf 
+\\ 
+
+\raggedleft{\bfseries LƯU Ý: File Latex không dịch được sẽ bị trừ điểm}
+
+\raggedright
+
+\section{Mathematical formula}
+\subsection{Biểu diễn hàm số}
+Hàm số $F(x)$ được biểu diễn theo Eq.(\ref{eq:ct1}) . Hàm số $y(\epsilon)$ được biểu diễn theo Eq.(\ref{eq:ct2})
+\begin{equation}
+    \label{eq:ct1}
+    F(x) = {\int_0^{20215264}}\left(\frac{1}{\sqrt{x}}{f_1}(a{s_i}){e^{\frac{-1}{{n_1}+\epsilon}}}+{f_2}(is{p_i}){e^{\frac{-1}{{n_2}+\epsilon}}}+{f_3}(is{p_i},c{c_i}){e^{\frac{-1}{{n_3}+\epsilon}}}\right)
+\end{equation}
+\begin{equation}
+    \label{eq:ct2}
+    ln(y(\epsilon))=\sum_{i=1}^{20215264}{(C_n^i}{a^i}{b^{n-i})}+{\int_{-\infty}^{20215264}}(x^3+1)dx+{\int_0^{20215264}}\frac{{\sum^{20215264}_1}x}{3^x+y}
+\end{equation}
+Lưu ý: MSSV là mã số sinh viên của bạn
+
+\section{Tables and tabulars}
+Hãy tạo bảng và điền tên sinh viên như trong bảng~\ref{tab:bang1}, và bảng~\ref{tab:bang2} như đề bài.Lưu ý khi tạo bảng hãy bắt đầu từ bảng cơ bản rồi hãy sử dụng các biện pháp căn chỉnh, ghép cột sau. Người làm bài thi sẽ đứng đầu tiên trong bảng
+\begin{table}[tbh]
+    \centering
+    \caption{\textit{Khai báo chuyển Font tên sinh viên}}
+    \vspace{5mm}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \multicolumn{1}{|c}{\textbf{Khai báo}} & \multicolumn{1}{c}{\textbf{Mã}} & \multicolumn{1}{c|}{\textbf{Hiển thị}} \\
+        \hline
+        rmfamily & \textbackslash rmfamily Roman & Nguyễn Hùng Cường - Roman \\
+        \hline
+        sffamily & \textbackslash sffamily Sans serif & \textsf{Đặng Trần Nam Khánh - Sans serif}\\
+        \hline
+        ttfamily & \textbackslash ttfamily typewriter & \texttt{Lê Hoàng Long - typewriter} \\
+        \hline \hline
+        bfseries & \textbackslash bfseries bold & \textbf{Dư Vũ Mạnh Đức - bold}\\
+        \hline \hline
+        upshape & \textbackslash upshape upright & \textup{Đặng Nhật Duy - upright}\\
+        \hline
+        itshape & \textbackslash itshape italic & \textit{Lâm Việt Hoàng - italic}\\
+        \hline
+        slshape & \textbackslash slshape slanted & \textsl{Lê Phúc Hưng - slanted}\\
+        \hline
+        scshape & \textbackslash scshape Small Caps & \textsc{Trần Nhật Minh - Small Caps}\\ 
+        \hline
+        em & \textbackslash em emphasized & \emph{Nguyễn Đình Chiến - emphasized}\\
+        \hline
+        \hline
+        normalfont & \textbackslash normalfont default & \textnormal{Đàm Minh Hải - default}\\
+        \hline
+    \end{tabular}
+    \label{tab:bang1}
+\end{table}
+\newpage
+\begin{table}[tbh]
+    \centering
+    \caption{\textit{Bảng điểm môn Kiến thức máy tính}}
+    \vspace{5mm}
+    \begin{tabular}{|c|c|c|c|c|}
+       \cline{2-5}
+       \multicolumn{1}{c}{} & \multicolumn{1}{|l}{\textbf{Điểm Linux}} & \multicolumn{1}{c}{\textbf{Điểm Beamer}} & \multicolumn{1}{c}{\textbf{Điểm Latex}} & \multicolumn{1}{c|}{\textbf{Tổng}}\\
+       \cline{2-5}
+       \multicolumn{5}{l}{\textbf{\textit{Nhóm 1}}}\\
+       \hline
+       Nguyễn Hùng Cường & \ldots & \ldots & \ldots & \ldots \\
+       \hline
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline 
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline
+       \multicolumn{1}{c|}{\textbf{Điểm trung bình}} & \ldots & \ldots & \ldots & \ldots \\
+       \cline{2-5}
+       \multicolumn{5}{l}{\textbf{\textit{Nhóm 2}}}\\
+       \hline
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline 
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline
+       Họ và tên sinh viên & \ldots & \ldots & \ldots & \ldots \\
+       \hline
+       \multicolumn{1}{c|}{\textbf{Điểm trung bình}} & \ldots & \ldots & \ldots & \ldots \\
+       \cline{2-5}
+    \end{tabular}
+    \label{tab:bang2}
+\end{table}
+\pagebreak
+\centerline{\mbox{\textbf{Chú ý: Sinh viên phải điền thông tin cá nhân của mình vào \linebreak bảng ~\ref{tab:bang1} và bảng ~\ref{tab:bang2}.}}}
+\newpage
+\section{Figures}
+\subsection*{Chèn hình đơn}
+Chú ý sinh viên có mã số sinh viên là lẻ thì tải hình vẽ rectangle.pdf từ địa chỉ sau: \url{https://users.soict.hust.edu.vn/linhdt/rectangle.pdf}\\ 
+Chú ý sinh viên có mã số sinh viên là chẵn thì tải hình vẽ circle.pdf từ địa chỉ sau: \url{https://users.soict.hust.edu.vn/linhdt/circle.pdf} Sử dụng hình trong file đã tải và chèn hình vào tài liệu sao cho hình chiếm 80\% độ rộng của trang. Để làm được như vậy sử dụng tùy chọn width=0.8\textbackslash textwidth khi chèn hình.
+\begin{figure}[tbh]
+    \centering
+    \includegraphics[width=0.8\textwidth]{circle.pdf}
+    \caption{Ví dụ Hình}
+    \label{fig:Hinh1}
+\end{figure}
+\pagebreak
+\subsection*{Chèn hình con}
+Tải hình vẽ shape.pdf từ địa chỉ \url{https://users.soict.hust.edu.vn/linhdt/shapes.pdf}. Sử dụng file shapes.pdf và phương pháp chèn hình cạnh nhau để vẽ hình dưới đây minh họa phép quay hình.
+
+(Chú ý: mã số sinh viên chẵn quay 90 độ, mã số sinh viên lẻ quay 45 độ)
+\pagebreak
+\begin{figure}[tbh]
+    \centering
+    \subfigure[Hình gốc]{
+    \includegraphics[]{shapes.pdf}
+    \label{fig:hinhgoc}}
+    \hspace{10mm}
+    \subfigure[Hình quay 90 độ]{
+    \includegraphics[angle=90]{shapes.pdf}
+    \label{fig:hinhquay}}
+    \caption{(a) Hinh gốc, (b) Hình quay 90 độ}
+    \label{fig:my_label}
+\end{figure}
+\section{Cross references}
+See Table~\ref{tab:bang1} and Table~\ref{tab:bang2} for an example of tables. Observe Eq.(\ref{eq:ct1}) and Eq.(\ref{eq:ct2})for examples of equations.
+\pagebreak
+\tableofcontents
+\listoffigures
+\listoftables
+\appendix
+\section{phụ lục 1}
+Các bạn lưu ý điền đúng họ tên và mã số sinh viên. Dựa vào mã số sinh viên để chèn đúng hình
+\centerline{\rule{12cm}{0.001cm}}\\
+Xác nhận của bộ môn
+\end{document}

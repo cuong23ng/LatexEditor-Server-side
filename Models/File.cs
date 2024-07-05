@@ -11,7 +11,6 @@ namespace Hustex_backend.Models
 
         public int ProjectId { get; set; }
 
-        [ForeignKey("ProjectId")]
         public Project Project { get; set; }
 
         [Required]

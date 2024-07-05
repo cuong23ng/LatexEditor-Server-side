@@ -25,8 +25,7 @@ namespace Hustex_backend.Migrations
             modelBuilder.Entity("Hustex_backend.Models.File", b =>
                 {
                     b.Property<string>("FileName")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
@@ -52,7 +51,7 @@ namespace Hustex_backend.Migrations
                     b.Property<DateTime>("LastModified")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2024, 6, 4, 16, 58, 32, 308, DateTimeKind.Local).AddTicks(9246));
+                        .HasDefaultValue(new DateTime(2024, 6, 11, 21, 20, 4, 295, DateTimeKind.Local).AddTicks(453));
 
                     b.Property<string>("ProjectName")
                         .IsRequired()
@@ -118,13 +117,13 @@ namespace Hustex_backend.Migrations
 
             modelBuilder.Entity("Hustex_backend.Models.Project", b =>
                 {
-                    b.HasOne("Hustex_backend.Models.User", "user")
+                    b.HasOne("Hustex_backend.Models.User", "User")
                         .WithMany("Projects")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("user");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Hustex_backend.Models.Project", b =>
