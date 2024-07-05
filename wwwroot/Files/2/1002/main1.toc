@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}How to calculate the score of the test}{1}{section.1}%
+\contentsline {section}{\numberline {2}Instructions}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}How to do}{1}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Submission}{2}{section.3}%
+\contentsline {section}{\numberline {4}Equations}{2}{section.4}%
+\contentsline {section}{\numberline {5}Tables and tabulars}{3}{section.5}%
+\contentsline {section}{\numberline {6}Figures}{3}{section.6}%
+\contentsline {section}{\numberline {7}Cross references}{3}{section.7}%

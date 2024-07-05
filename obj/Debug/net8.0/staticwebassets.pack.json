@@ -1,44 +1,20 @@
 {
   "Files": [
     {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\LatexFile\\helloearth.tex",
-      "PackagePath": "staticwebassets\\Data\\LatexFile\\helloearth.tex"
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2004\\3069\\main.pdf",
+      "PackagePath": "staticwebassets\\Files\\2004\\3069\\main.pdf"
     },
     {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\LatexFile\\main.tex",
-      "PackagePath": "staticwebassets\\Data\\LatexFile\\main.tex"
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2004\\3069\\main.tex",
+      "PackagePath": "staticwebassets\\Files\\2004\\3069\\main.tex"
     },
     {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloearth.aux",
-      "PackagePath": "staticwebassets\\Data\\PdfFile\\helloearth.aux"
-    },
-    {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloearth.log",
-      "PackagePath": "staticwebassets\\Data\\PdfFile\\helloearth.log"
-    },
-    {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloearth.pdf",
-      "PackagePath": "staticwebassets\\Data\\PdfFile\\helloearth.pdf"
-    },
-    {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloworld.aux",
-      "PackagePath": "staticwebassets\\Data\\PdfFile\\helloworld.aux"
-    },
-    {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloworld.log",
-      "PackagePath": "staticwebassets\\Data\\PdfFile\\helloworld.log"
-    },
-    {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Data\\PdfFile\\helloworld.pdf",
-      "PackagePath": "staticwebassets\\Data\\PdfFile\\helloworld.pdf"
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2004\\3070\\main.tex",
+      "PackagePath": "staticwebassets\\Files\\2004\\3070\\main.tex"
     },
     {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\circle.pdf",
       "PackagePath": "staticwebassets\\Files\\2\\1002\\circle.pdf"
-    },
-    {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\helloearth.log",
-      "PackagePath": "staticwebassets\\Files\\2\\1002\\helloearth.log"
     },
     {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\helloearth.pdf",
@@ -49,20 +25,12 @@
       "PackagePath": "staticwebassets\\Files\\2\\1002\\helloearth.tex"
     },
     {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\hellopeople.log",
-      "PackagePath": "staticwebassets\\Files\\2\\1002\\hellopeople.log"
-    },
-    {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\hellopeople.pdf",
       "PackagePath": "staticwebassets\\Files\\2\\1002\\hellopeople.pdf"
     },
     {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\hellopeople.tex",
       "PackagePath": "staticwebassets\\Files\\2\\1002\\hellopeople.tex"
-    },
-    {
-      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\helloworld.log",
-      "PackagePath": "staticwebassets\\Files\\2\\1002\\helloworld.log"
     },
     {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\helloworld.pdf",
@@ -73,12 +41,64 @@
       "PackagePath": "staticwebassets\\Files\\2\\1002\\helloworld.tex"
     },
     {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\main.log",
+      "PackagePath": "staticwebassets\\Files\\2\\1002\\main.log"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\main.tex",
+      "PackagePath": "staticwebassets\\Files\\2\\1002\\main.tex"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\main1.out",
+      "PackagePath": "staticwebassets\\Files\\2\\1002\\main1.out"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\main1.pdf",
+      "PackagePath": "staticwebassets\\Files\\2\\1002\\main1.pdf"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\main1.tex",
+      "PackagePath": "staticwebassets\\Files\\2\\1002\\main1.tex"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\main1.toc",
+      "PackagePath": "staticwebassets\\Files\\2\\1002\\main1.toc"
+    },
+    {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\rectangle.pdf",
       "PackagePath": "staticwebassets\\Files\\2\\1002\\rectangle.pdf"
     },
     {
       "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\1002\\shapes.pdf",
       "PackagePath": "staticwebassets\\Files\\2\\1002\\shapes.pdf"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\2002\\a.tex",
+      "PackagePath": "staticwebassets\\Files\\2\\2002\\a.tex"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\2069\\main.out",
+      "PackagePath": "staticwebassets\\Files\\2\\2069\\main.out"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\2069\\main.pdf",
+      "PackagePath": "staticwebassets\\Files\\2\\2069\\main.pdf"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\2069\\main.tex",
+      "PackagePath": "staticwebassets\\Files\\2\\2069\\main.tex"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\2069\\main.toc",
+      "PackagePath": "staticwebassets\\Files\\2\\2069\\main.toc"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\3071\\main.tex",
+      "PackagePath": "staticwebassets\\Files\\2\\3071\\main.tex"
+    },
+    {
+      "Id": "D:\\git-repos\\project2\\Hustex-backend\\wwwroot\\Files\\2\\3072\\main.tex",
+      "PackagePath": "staticwebassets\\Files\\2\\3072\\main.tex"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Hustex-backend.Microsoft.AspNetCore.StaticWebAssets.props",

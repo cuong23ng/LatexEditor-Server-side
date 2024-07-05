@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage{marvosym}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{upgreek}
+\title{\huge Computer Literacy ICT program 20192}
+\author{\Large Nguyễn Hùng Cường}
+\date{\Large \today}
+
+\begin{document}
+
+\maketitle
+
+\section{How to calculate the score of the test}
+\begin{itemize}
+    \item Compiled to pdf file (0.5 points)
+    \item Title (0.75 points): each line 0.25 points. It is necessary to have your correct full name and your correct student number.
+    \item Format the text correctly (0.25 points)
+    \item Sectioning (1.5 points)
+    \item Math (2 points): each equation 0.5 points
+    \item Table ( 1.5 point): first table 0.5 points, second table 1 point.
+    \item Figure (1 point): first figure 0.5 points, second figure 0.5 points.
+    \item Create itemize and enumerate (1 point)
+    \item Cross Ref (0.5 points)
+    \item Create table of content 0.5 points
+    \item Create list of tables 0.25 points
+    \item Create list of figures 0.25 points
+\end{itemize}
+
+\section{Instructions}
+\subsection{How to do}
+Students need to create this document using latex and follow \textbf{these below rules:}
+\begin{enumerate}
+    \item Need to use ''article'' for document class.
+    \item Write your full name and date using commands \textbackslash \textsf{author} and \textbackslash \textsf{date}.
+    \item Use sectioning commands to split the sections inside the document.
+    \item Use cross-referencing commands \textbackslash \textsf{ref}.
+    \item Use commands to create table of contents, list of figures, list of tables.
+    \item Put the image file and Latex source file (.tex) in the same folder
+    \item Change text ``\emph{your\textunderscore student\textunderscore number}'' to correct student number. Example: 20192019
+\end{enumerate}
+
+\section{Submission}
+Time: 90 minutes.\\
+When submission, student need to send to the email address: linhtd@soict.hust.edu.vn\\
+Template for email title: [CL] - Your Full name - Your student number.\\
+Example: [CL] - Nguyen Van A - 20202020.\\
+The email needs to have:
+\begin{enumerate}
+    \item Latex source (.tex file).
+    \item All images inside the document.
+    \item Output pdf file.
+\end{enumerate}
+Note: if the Latex file is not compiled, you will be penalized. If the email title is not correct, you will be also penalized.
+\section{Equations}
+A $k-$combination of a set $S$ is a subset of $k$ distinct elements of $S$. If the set has n elements, the number of $k-$combinations is equal to the binomial coefficient in Equation~\ref{eq:ct1}:
+\begin{displaymath}
+\left(
+\begin{array}{c}
+    x \\
+    y  
+\end{array}
+\right)
+= \  \frac{n(n-1)\ldots (n-k+1)}{k(k-1)\ldots 1}\\
+\end{displaymath}
+\begin{equation}
+    \label{eq:ct1}
+    = \ \frac{n!}{k!(n-k)!}
+\end{equation}
+\centerline{Function $f(x,y)$ is represent by Eq.~\ref{eq:ct2}. Function $y_2$ is represented by Eq.~\ref{eq:ct3}}
+\begin{equation}
+    \label{eq:ct2}
+    f(x,y) = \left\{
+    \begin{array}{ccl}
+        a_1^x + a_2^y & \textrm{if} & x<0  \\
+        \cos n\varphi + i\sin n\varphi & \textrm{if} & 0\leqslant x<10 \\
+        \sqrt[3]{\emph{your\textunderscore student\textunderscore number}} & \textrm{if} & 20\leqslant x< 30\\
+        1 - \log_2{x^y} & \textrm{if} & 50\leqslant x
+    \end{array}
+    \right .
+\end{equation}
+
+
+Calculate:
+\begin{equation}
+    \label{eq:ct3}
+    \lim_{x\to \emph{your\textunderscore student\textunderscore number}}{\prod_{i=1}^{n}f(x,i)}
+\end{equation}
+\section{Tables and tabulars}
+Create two tables. Note: when creating the table, start from the basic table
+and then use the alignment methods. Check the \ldots for the alignment in left,
+right, or center.\\
+\textbf{Please fill the tables with your information. You need to fill one
+line into Table~\ref{tab:1}. One line in “General courses” section and one line
+in “IT courses” section of Table~\ref{tab:2}}.
+\begin{table}[tbh]
+    \centering
+    \caption{Identity information}
+    \begin{tabular}{|c|c|c|}
+        \hline 
+        \multicolumn{3}{|c|}{\textbf{Information of student in ICT-64}}\\
+        \hline \hline
+        \textbf{Full name} & \textbf{Student number} & \textbf{Gender}\\
+        \hline
+        \ldots & \ldots & \ldots \\
+        \hline
+    \end{tabular}
+    \label{tab:1}
+\end{table}
+\begin{table}[tbh]
+    \centering
+    \caption{Class timetable}
+    \begin{tabular}{|l|l|r|r|}
+        \hline
+        \textbf{\#} & \textbf{Course name} & \textbf{Start time} & \textbf{room} \\
+        \hline \hline
+        \multicolumn{4}{|c|}{\textbf{General courses}}\\
+        \hline
+        \ldots & \ldots & \ldots & \ldots\\
+        \hline
+        \hline
+        \multicolumn{4}{|c|}{\textbf{IT courses}}\\
+        \hline
+        \ldots & \ldots & \ldots & \ldots\\
+        \hline
+    \end{tabular}
+    \label{tab:2}
+\end{table}
+\section{Figures}
+Download the image from this address:
+\url{https://users.soict.hust.edu.vn/linhdt/rectangle.pdf} \\ \\
+\indent Insert the image into the document so that the figure occupies 60\% of the width of the page. To do that, use width=0.6\textbackslash textwidth when insert the figure.
+\indent Use shapes.pdf and rotate method. The angle of the rotation is last two number of your student number. For example, if your student number is 20192019,
+the angle will be 19 degrees.
+
+\section{Cross references}
+See Table 1 for an example of a table. Observe Eq.(2) and Eq.(3) for examples
+of equations.
+\pagebreak
+\tableofcontents
+\listoftables
+\end{document}

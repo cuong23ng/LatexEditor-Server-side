@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hustex-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bcaffe4a8d8bee89888f9dd84c53d16ab2e24c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e7be1fa5f320754428382014df8522cc70255bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hustex-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hustex-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

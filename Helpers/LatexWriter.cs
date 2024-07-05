@@ -1,12 +1,11 @@
 using System.Text;
-using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Hustex_backend.Helpers
 {
     public static class LatexWriter
     {
-        public async static Task<bool> SaveToFile(HttpContext context, string location)
+        public async static Task<bool> SaveToFile(HttpContext context, string path)
         {
             try
             {
@@ -15,7 +14,7 @@ namespace Hustex_backend.Helpers
 
                 var content = JsonConvert.DeserializeObject<string>(body);
                 
-                await System.IO.File.WriteAllTextAsync(location, content);
+                await File.WriteAllTextAsync(path, content);
 
                 return true;
             }

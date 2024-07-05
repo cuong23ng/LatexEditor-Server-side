@@ -24,28 +24,16 @@ namespace Hustex_backend.Migrations
 
             modelBuilder.Entity("Hustex_backend.Models.File", b =>
                 {
-                    b.Property<int>("FileId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FileId"));
-
-                    b.Property<string>("DataType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.HasKey("FileId");
+                    b.Property<string>("DataType")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasIndex("FileName")
-                        .IsUnique();
+                    b.HasKey("FileName", "ProjectId", "DataType");
 
                     b.HasIndex("ProjectId");
 
@@ -63,7 +51,7 @@ namespace Hustex_backend.Migrations
                     b.Property<DateTime>("LastModified")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2024, 5, 28, 21, 49, 40, 574, DateTimeKind.Local).AddTicks(1554));
+                        .HasDefaultValue(new DateTime(2024, 6, 11, 21, 20, 4, 295, DateTimeKind.Local).AddTicks(453));
 
                     b.Property<string>("ProjectName")
                         .IsRequired()
@@ -129,13 +117,13 @@ namespace Hustex_backend.Migrations
 
             modelBuilder.Entity("Hustex_backend.Models.Project", b =>
                 {
-                    b.HasOne("Hustex_backend.Models.User", "user")
+                    b.HasOne("Hustex_backend.Models.User", "User")
                         .WithMany("Projects")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("user");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Hustex_backend.Models.Project", b =>

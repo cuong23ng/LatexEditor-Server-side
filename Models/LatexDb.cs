@@ -1,6 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 
 namespace Hustex_backend.Models
 {
@@ -22,13 +20,22 @@ namespace Hustex_backend.Models
                 .HasIndex(u => u.Username)
                 .IsUnique();
 
-            modelBuilder.Entity<File>()
-                .HasIndex(n => n.FileName)
-                .IsUnique();
-
             modelBuilder.Entity<Project>()
                 .Property(d => d.LastModified)
                 .HasDefaultValue(DateTime.Now);
+            modelBuilder.Entity<Project>()
+                .HasOne(p => p.User)
+                .WithMany(u => u.Projects)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<File>()
+                .HasKey(f => new { f.FileName, f.ProjectId, f.DataType });
+            modelBuilder.Entity<File>()
+                .HasOne(f => f.Project)
+                .WithMany(p => p.Files)
+                .HasForeignKey(f => f.ProjectId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
